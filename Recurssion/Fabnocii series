@@ -1,0 +1,62 @@
+//Simple Way
+
+#include<iostream>
+using namespace std;
+
+void fabnocii(int n){
+    
+    int start = 0;
+    cout << start << " ";
+    int first = 1;
+    cout << first<<" ";
+    
+    for(int i = 3; i <= n; i++){
+        int next = start + first;
+        cout << next<< " ";
+        start = first;
+        first = next;
+    }
+    
+}
+
+int main(){
+    
+    int n;
+    cin >> n;
+    
+    fabnocii(n);
+}
+
+
+
+//RECUSIVE WAY
+
+#include<iostream>
+using namespace std;
+
+int fabnocii(int n){
+    
+    if(n == 0){
+        return 0;
+    }
+    
+    if(n == 1){
+        return 1;
+    }
+    
+    return fabnocii(n-1) + fabnocii(n-2);
+    
+}
+
+int main(){
+    
+    int n;
+    cin >> n;
+    
+    for(int i = 0; i < n; i++){
+        cout << fabnocii(i)<<" ";
+    }
+    
+    
+}
+}
