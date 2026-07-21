@@ -1,0 +1,35 @@
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int n = nums.size();
+        int i = n-1;
+        while(i >= 0){
+
+            if(i == 0){
+                reverse(nums.begin(), nums.end());
+                cout << nums[i];
+                return;
+            }
+
+            else if(nums[i-1] < nums[i]){
+                int pivot = i-1;
+
+                for(int j = n-1; j > pivot; j--){
+                    if(nums[j] > nums[pivot]){
+                    swap(nums[pivot], nums[j]);
+                    reverse((nums.begin() + pivot+1), nums.end());
+                    cout << nums[i];
+                    return;
+                    }
+                }
+            }
+            
+
+            else{
+                i--;
+            }
+            
+        }
+    }
+};
+It Can Be Done Using Next_Permutation function also;
