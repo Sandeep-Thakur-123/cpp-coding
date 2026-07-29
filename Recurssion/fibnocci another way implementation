@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+
+void fibnocii(int n, int a, int b){
+    
+    int c = a + b;
+    
+    if(c > n)
+    return;
+
+    cout << c <<" ";
+    
+    a = b;
+    b = c;
+    
+    fibnocii(n,a,b);
+}
+
+int main(){
+    int n;
+    cin >> n;
+    
+    int a = 0;
+    cout << a<<" ";
+    int b = 1;
+    cout << b<<" ";
+    
+    fibnocii(n,a,b);
+}
