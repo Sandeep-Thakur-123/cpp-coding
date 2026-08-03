@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+string s = "51";
+int num = 0;
+
+for(char c : s){
+num = num *10 + (c - '0');
+cout << num;}
+}
